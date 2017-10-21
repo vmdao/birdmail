@@ -1,0 +1,144 @@
+<style type="text/css">
+    .login-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        height: 100vh;
+        background-color: #2d3a4b
+    }
+
+    .login-container input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #293444 inset!important;
+        -webkit-text-fill-color: #fff!important
+    }
+
+    .login-container input {
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        border-radius: 0;
+        padding: 12px 5px 12px 15px;
+        color: #eee;
+        height: 47px
+    }
+
+    .login-container .el-input {
+        display: inline-block;
+        height: 47px;
+        width: 85%
+    }
+
+    .login-container .tips {
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 10px
+    }
+
+    .login-container .svg-container {
+        padding: 6px 5px 6px 15px;
+        color: #889aa4;
+        vertical-align: middle;
+        width: 30px;
+        display: inline-block
+    }
+
+    .login-container .svg-container_login {
+        font-size: 20px
+    }
+
+    .login-container .title {
+        font-size: 26px;
+        font-weight: 400;
+        color: #eee;
+        margin: 0 auto 40px;
+        text-align: center;
+        font-weight: 700
+    }
+
+    .login-container .login-form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 400px;
+        padding: 35px 35px 15px;
+        margin: 120px auto
+    }
+
+    .login-container .el-form-item {
+        border: 1px solid hsla(0, 0%, 100%, .1);
+        background: rgba(0, 0, 0, .1);
+        border-radius: 5px;
+        color: #454545
+    }
+
+    .login-container .show-pwd {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        font-size: 16px;
+        color: #889aa4;
+        cursor: pointer
+    }
+
+    .login-container .thirdparty-button {
+        position: absolute;
+        right: 35px;
+    }
+    .thirdparty-button a{
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
+
+<div class="login-container">
+    <form class="el-form card-box login-form el-form--label-left" autocomplete="on" action="/login" method="post">
+        <h3 class="title">Welcom to Signin</h3>
+        <div class="el-form-item is-required">
+
+            <div class="el-form-item__content">
+                <div class="el-input">
+                    <input autocomplete="on" placeholder="email" type="text" name="email" rows="2" validateevent="true" class="el-input__inner">
+                </div>
+
+            </div>
+        </div>
+        <div class="el-form-item is-required">
+
+            <div class="el-form-item__content">
+
+                <div class="el-input">
+
+                    <input autocomplete="on" placeholder="password" type="password" name="password" rows="2" validateevent="true" class="el-input__inner">
+                </div>
+
+            </div>
+        </div>
+        <button type="submit" class="el-button el-button--primary" style="width: 100%; margin-bottom: 30px;">
+            <span>Login</span>
+        </button>
+    </form>
+    <%if (typeof message != "undefined") {%>
+        <div class="el-dialog__wrapper" id="success-alert" style="display: none;">
+            <div class="el-dialog el-dialog--small" style="top: 15%;">
+                <div class="el-dialog__header">
+                    <span class="el-dialog__title">
+                        <%-message %>
+                    </span>
+                    <button type="button" aria-label="Close" class="el-dialog__headerbtn">
+                        <i class="el-dialog__close el-icon el-icon-close"></i>
+                    </button>
+                </div>
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <script type="text/javascript">
+            window.onload = function () {
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                    $("#success-alert").alert('close');
+                });
+            }
+        </script>
+        <% } %>
+
+</div>

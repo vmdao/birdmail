@@ -29,13 +29,5 @@ node_modules
 .lock-wscript
 
 .DS_Store
-assets/default/images/upload/*
-
-# Excude custom assets and views
-views/*
-!views/default
-
-assets/*
-!assets/default
 
 config/settings.js
