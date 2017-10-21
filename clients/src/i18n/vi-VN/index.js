@@ -1,0 +1,20 @@
+export default {
+  'Home': 'Trang Chủ',
+  'Logout': 'Đăng Xuất',
+  'Login': 'Đăng nhập',
+  'Register': 'Đăng Ký',
+  'Email': 'Email',
+  'Password': 'Mật khẩu',
+  '* Indicates required field': 'Yêu cầu điền',
+  'Username': 'Tài khoản',
+  'Settings': 'Cài Đặt',
+  'Submit': 'Gửi',
+  'Back': 'Quay lại',
+  'Search': 'Tìm Kiếm',
+  'Created At': 'Ngày tạo',
+  'Updated At': 'Ngày cập nhật',
+  'Name': 'Tên',
+  'Title': 'Tiêu đề',
+  'Create {}': 'Tạo',
+  'Page Not Found.': 'Trang không tìm thấy'
+}

@@ -1,0 +1,280 @@
+// @import '../../node_modules/vuetify/src/stylus/settings/_colors'
+ 
+// $theme := {
+//   primary: $red.darken-2
+//   accent: $red.accent-2
+//   secondary: $grey.darken-3
+//   info: $blue.lighten-1
+//   warning: $amber.darken-2
+//   error: $red.accent-4
+//   success: $green.lighten-2
+// }
+
+// @import '../../node_modules/vuetify/src/stylus/main'
+body{
+  background: #f9f9f9;
+  font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei" , sans-serif;
+}
+.jl{
+  justify-content: flex-start;
+}
+.jc{
+  justify-content: center;
+}
+.jr{
+  justify-content: flex-end;
+}
+.fixed-bottom{
+  position: fixed;
+  width:300px;
+  bottom:0
+}
+.crud-grid-thumb{
+  margin:0.5em 0;
+  max-height:5em;
+}
+.quill-editor button {
+  margin-bottom:0;
+}
+
+// vuetify reset
+.image-brand{
+  weight: 300px
+}
+.image-brand img{
+  width: 100%;
+
+}
+.pa-6 {
+  padding: 0 120px;
+}
+
+.pa-6 .toolbar__content > *:not(.btn):not(.toolbar__title):not(.menu):first-child, .toolbar__extension > *:not(.btn):not(.toolbar__title):not(.menu):first-child {
+    margin-left: 0;
+}
+
+.btn--floating .btn__content{
+  flex:1 0 auto;
+}
+table.table tr:not(:last-child){
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.application .theme--light.toolbar .btn .icon, .application .theme--light.toolbar .toolbar__title, .application .theme--light.toolbar .list__tile{
+  color: rgba(195, 120, 120, 0.87);
+}
+.application .theme--light.toolbar .toolbar__title{
+  margin-left: 10px;
+}
+
+.application--light {
+  background-color: #f9f6f2
+}
+
+.application--light .navigation-drawer{
+      width: 280px;
+      -webkit-box-shadow: 1px 0px 1px 0px #e2dfda;
+      -moz-box-shadow: 1px 0px 1px 0px #e2dfda;
+      box-shadow: 1px 0px 1px 0px #e2dfda;
+}
+.application--light .navigation-drawer .list--group{
+   background-color: #efedea;
+}
+.application--light .navigation-drawer .list .subheader {
+  padding: 0 16px 0px 38px;
+}
+.application--light .navigation-drawer .list .list__tile {
+  padding: 0 16px 0px 35px;
+}
+ .application--light .navigation-drawer .list__tile__action{
+    min-width: 40px;
+}
+
+.application .theme--light.toolbar{
+  background-color: #ffffff;
+  box-shadow: unset;
+  border-bottom: 1px solid #eaeaea;
+}
+.navigation-drawer--persistent:not(.navigation-drawer--is-mobile).navigation-drawer--open:not(.navigation-drawer--right):not(.navigation-drawer--clipped):not(.navigation-drawer--floating) ~ .toolbar, .navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--right):not(.navigation-drawer--clipped):not(.navigation-drawer--floating) ~ .toolbar{
+    padding-left: 300px;
+  
+}
+.navigation-drawer--persistent:not(.navigation-drawer--is-mobile).navigation-drawer--open:not(.navigation-drawer--right) ~ main, .navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--right) ~ main, .navigation-drawer--persistent:not(.navigation-drawer--is-mobile).navigation-drawer--open:not(.navigation-drawer--right) ~ .footer:not(.footer--fixed):not(.footer--absolute), .navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--right) ~ .footer:not(.footer--fixed):not(.footer--absolute){
+    padding-left: 280px;
+}
+.toolbar--fixed + main{
+     padding-top: 74px;
+}
+.application .theme--light.toolbar .toolbar__content{
+  height: 74px;
+}
+.input-group{
+  padding: 10px 0;
+}
+.application--light .input-group:not(.input-group--error) .input-group__details:before{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.datatable thead th.column.sortable{
+  font-weight: 700;
+}
+
+.image-list{
+  width: 100%;
+}
+.image-list .image-item{
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  max-height: 120px; 
+  margin-right: 10px;
+  float: left;
+}
+
+.image-list .image-item .image-center{
+  width: 100%;
+  height: 100%;
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.dropzone.vue-dropzone {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  min-height: 100px; 
+}
+.dropzone.vue-dropzone .dz-preview{
+  margin: 0 0 0 120px;
+  top: -77px;
+  float: left;
+}
+.dropzone.vue-dropzone .dz-message{
+  font-size: 12px;
+  margin: 0;
+}
+.dropzone.vue-dropzone .dz-preview .dz-image{
+  z-index: unset;
+}
+.dropzone.dz-started.vue-dropzone .dz-message{
+  display: block;
+}
+
+.dropzone.vue-dropzone .dz-preview .dz-remove{
+  top: unset;
+}
+.dropzone.vue-dropzone .dz-preview .dz-details .dz-size{
+  margin: 0;
+}
+
+input, textarea{
+    -webkit-appearance: none;
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid rgb(191, 203, 217);
+    box-sizing: border-box;
+    color: rgb(31, 45, 61);
+    display: inline-block;
+    font-size: inherit;
+    line-height: 1;
+    outline: none;
+    padding: 3px 10px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+}
+input:focus, textarea:focus{
+    outline: none;
+    border-color: #20a0ff;
+}
+.input-group--text-field input {
+  height: 34px;
+}
+.input-group__details,
+.input-group--select .input-group--select__autocomplete,
+.input-group--select.input-group--focused .input-group--select__autocomplete {
+   display: none;
+}
+
+.input-group--select .input-group__input, 
+.input-group--select input{
+  border-radius: 4px;
+  border: 1px solid rgb(191, 203, 217);
+}
+.input-group.input-group--error label, .input-group.input-group--error .input-group__input .icon,
+.input-group:not(.input-group--error) label{
+    position: unset;
+}
+
+.input-group--text-field:not(.input-group--single-line).input-group--focused:not(.input-group--textarea) label,
+.input-group--text-field:not(.input-group--single-line):focus:not(.input-group--textarea) label,
+.input-group--text-field.input-group--dirty:not(.input-group--textarea) label{
+    transform: unset;
+}
+
+.input-group__selections__comma,
+chip chip--removable chip--select-multi{
+  margin-left: 10px;
+}
+
+input.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile-2 + label {
+    color: #d3394c;
+    border: 2px solid currentColor;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+    color: #722040;
+}
+.ql-editor{
+  min-height: 20em;
+}
