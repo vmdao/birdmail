@@ -146,8 +146,8 @@ export default {
       this.columns = [
         {text: '#', type: 'text', value: 'rank'},
         {text: 'Name', type: 'text', value: 'name', left: true, align: 'left'},
-        {text: 'Subject', type: 'text', value: 'subject', align: 'left'},
-        {text: 'CreateAt', type: 'text', value: 'opened_count', align: 'left'}
+        {text: 'Subject', type: 'text', value: 'subject', left: false, align: 'right'},
+        {text: 'CreateAt', type: 'text', value: 'createdAt', left: false, align: 'right'}
       ];
       if (this.options && this.options.sort) {
         let sortData = this.options.sort.split('-')

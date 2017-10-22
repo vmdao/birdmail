@@ -1,7 +1,7 @@
 <template lang="pug">
 v-flex
-  v-select(v-if="['select', 'select2'].includes(field.type)", @input="changeSelect" item-text="name",return-object, item-value="id", v-model="model", :chips="field.options.chips", :multiple="field.options.multiple" ,:autocomplete="field.options.autocomplete" , :items='field.choices', v-bind='field')
-  template(v-else-if="['radios', 'checkboxes'].indexOf(field.type) > -1")
+  v-select(v-if="['select', 'select2'].includes(field.type)", @input="changeSelect", item-text="name", return-object, item-value="id", v-model="model", :chips="field.options.chips", :multiple="field.options.multiple" ,:autocomplete="field.options.autocomplete" , :items='field.choices', v-bind='field')
+  template(v-else-if="['checkboxes'].indexOf(field.type) > -1")
     p {{$t(field.label)}}
     v-layout(row, wrap)
       v-flex(v-bind="{[field.width]: true}", xs12, v-for='option in field.choices',:key="field.value")  
@@ -27,13 +27,16 @@ v-flex
         )
   template(v-else-if="['date'].indexOf(field.type) > -1")
     v-flex
-      v-menu
+      v-menu(@increment="changeBody")
         v-text-field(slot='activator', v-model='model', :label="$t(field.label)")
         v-date-picker(v-model='model', no-title, scrollable, actions)
       //- v-menu(lazy='', :close-on-content-click='false', transition='scale-transition', offset-y='', full-width='', :nudge-right='40', max-width='290px', min-width='290px')
       //-   v-text-field(slot='activator', label='Picker in menu', v-model='time', prepend-icon='access_time', readonly='')
       //-   v-time-picker(v-model='time', autosave='')
-
+  template(v-else-if="['date2'].indexOf(field.type) > -1")
+    v-flex
+      label {{$t(field.label)}}
+      input(type="datetime-local", v-bind='field', v-model='model')
   div(:class="inputGroupClass", v-else-if="field.type == 'html'")
     label {{$t(field.label)}}
     div.pt-2
@@ -108,12 +111,9 @@ export default {
     onSelectFile (e) {
       console.log('onSelectFile', e)
     },
-    changeSelect () {
-      console.log(this.model, 'dấds');
-      this.mo
-    },
-    changeTemplateBody (data) {
-      console.log('data', data)
+    changeSelect (data) {
+      this.$emit('increment')
+      console.log(12)
     },
     uploadSuccess (file, response) {
       if (response.status === 200) {
@@ -129,6 +129,9 @@ export default {
     imageShowError (event) {
       const img = event.target;
       img.src = img.src;
+    },
+    changeBody (e) {
+      console.log('change body')
     }
   }
 }

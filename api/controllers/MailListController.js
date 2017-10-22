@@ -81,7 +81,7 @@ module.exports = {
                 id
             } = params;
 
-        Mailgun.lists(id).destroy().then(function (data) {
+        Mailgun.lists(id).delete().then(function (data) {
             console.log(data);
             res.json(data)
         }, function (err) {

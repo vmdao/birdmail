@@ -44,6 +44,7 @@ import VGrid from './components/Grid.vue'
 import VField from './components/Field.vue'
 import VUpload from './components/Upload.vue'
 import VBar from './components/Bar.vue'
+import VLine from './components/Line.vue'
 
 // import Modal from './components/Modal'
 // Vue.use(Modal)
@@ -53,6 +54,7 @@ Vue.component('v-grid', VGrid)
 Vue.component('v-field', VField)
 Vue.component('v-upload', VUpload)
 Vue.component('v-bar', VBar)
+Vue.component('v-line', VLine)
 
 /* eslint-disable no-new */
 new Vue({

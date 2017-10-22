@@ -177,8 +177,8 @@ export default {
       })
     },
     remove (item) {
-      this.$http.delete(`${this.resource}/${item.id}`).then(({data}) => {
-        const itemIndex = this.items.findIndex(i => i.id === item.id)
+      this.$http.delete(`${this.resource}/${item.address}`).then(({data}) => {
+        const itemIndex = this.items.findIndex(i => i.address === item.address)
         this.items.splice(itemIndex, 1);
         this.dialog = false;
       })

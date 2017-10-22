@@ -34,11 +34,11 @@ export default {
       model: {},
       rules: {},
       messages: {},
-      'fields': {
-        'name': {label: 'Name'},
-        'address': {label: 'Address', type: 'text'},
-        'description': {label: 'Description', type: 'textarea'},
-        'access_level': {label: 'Access Level', type: 'number'}
+      fields: {
+        name: {label: 'Name'},
+        address: {label: 'Address', type: 'text'},
+        description: {label: 'Description', type: 'textarea'},
+        access_level: {label: 'Access Level', type: 'select', choices: ['read-only', 'members', 'everyone'], options: {autocomplete: true, multiple: false, chips: false}}
       }
     }
   },

@@ -91,7 +91,7 @@ module.exports = {
                 id
             } = params;
 
-        Mailgun.campaigns(id).destroy().then(function (data) {
+        Mailgun.campaigns(id).delete().then(function (data) {
             console.log(data);
             res.json(
                 data

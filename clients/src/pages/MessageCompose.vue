@@ -1,6 +1,6 @@
 <template>
 <v-layout> 
-  <v-flex xs8="xs8">
+  <v-flex xs10>
     <v-card flat>
       <v-card-text>
         <v-form ref="form" v-model="model" v-bind="$data" lazy-validation>
@@ -48,8 +48,7 @@ export default {
           label: 'Body',
           type: 'html'
         },
-        deliveryDate: {label: 'Delivery Date', type: 'date'},
-        // deliveryTime: {label: 'Delivery Time', type: 'time'},
+        deliveryTime: {label: 'Delivery Time(About 3 days)', type: 'date2'},
         campaigns: {label: 'Campaigns', type: 'select', choices: [], options: {autocomplete: true, multiple: false, chips: true}},
         maillists: {label: 'Mail List', type: 'select', choices: [], options: {autocomplete: false, multiple: true, chips: true}}
       }
@@ -80,16 +79,16 @@ export default {
   },
   methods: {
     updateFields () {
-      console.log('dadad');
     },
     changeTemplate (data) {
-      console.log('dadad', data)
     },
     changeMailList (data) {
-      console.log('dadad', data)
     },
     onSubmit () {
       this.$http.post(`${this.resource}`, this.model).then(({ data }) => {
+        if (data.error) {
+          return alert('Error. Check again information')
+        }
         this.onSuccess(data);
       })
     },
@@ -145,8 +144,6 @@ export default {
     this.fetchDataTemplate();
     this.fetchDataMailList();
     this.fetchDataCampaigns();
-  },
-  mounted () {
   }
 }
 </script>

@@ -1,5 +1,5 @@
 export default [
-  { 'header': 'Admin' },
+  { 'header': 'Email' },
   { 'href': '/messages/compose', 'title': 'Compose Email', 'icon': 'send' },
   { 'href': '/messages/stored', 'title': 'Message Stored', 'icon': 'view_list' },
   {
@@ -10,6 +10,8 @@ export default [
       { 'href': '/templates/create', 'title': 'Create Template', 'icon': 'note_add' }
     ]
   },
+  { divider: true },
+  { 'header': 'Analytic' },
   {
     'title': 'Mail List Manager',
     'icon': 'work',
@@ -26,15 +28,6 @@ export default [
       { 'href': '/campaigns/create', 'title': 'Create Campaign', 'icon': 'note_add' }
     ]
   },
-  // {
-  //   'title': 'Contact Manager',
-  //   'icon': 'domain',
-  //   'items': [
-  //     { 'href': '/contacts', 'title': 'Contacts', 'icon': 'view_list' },
-  //     { 'href': '/contacts/create', 'title': 'Create Contact', 'icon': 'note_add' }
-  //   ]
-  // },
-  // { 'href': '/accounts', 'title': 'Account Manager', 'icon': 'note_add' },
   { divider: true },
   { 'href': '/', 'title': 'Go Dashboard', 'icon': 'timeline' },
   { 'href': '/login', 'icon': 'lock', 'title': 'Logout' }

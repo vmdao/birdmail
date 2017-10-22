@@ -29,7 +29,7 @@
 
 module.exports = {
   mailgun: {
-    apiKey: 'key-yourapikey',
+    apiKey: 'key-4e13c5a7f92dc7cd001ef3d93eec3dcc',
     domain: 'vuminhdao.info',
     id: 1,
     name: 'Name Default',

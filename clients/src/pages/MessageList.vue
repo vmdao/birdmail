@@ -12,17 +12,12 @@ div()
       template(slot='items', scope='props')
         tr
           td(:class="column.left? '': 'text-xs-right'", v-for='column in columns', v-html="getColumnData(props.item, column)")
-          td(v-if='actions !== false', width='240')
+          td(v-if='actions !== false', width='160')
             template(v-for="(value, action) in actions")
               v-btn(v-if="['edit', 'delete'].indexOf(action) < 0", router,primary,fab,small,dark,:to="{name: action, params: {resource,id:props.item.id}}")
                 v-icon {{action.icon ? action.icon : action}}
             v-btn(dark,primary,fab,small, :to="{name: 'messageCompose', params: {resource, id:props.item.id}}")
-              v-icon send
-            v-btn(v-if="options.edit !== false",dark,warning,fab,small, :to="{name: 'templateEdit', params: {resource,id:props.item.id}}")
-              v-icon edit
-            v-btn(v-if="options.delete !== false",fab,small,@click.native.stop="showDialog(props.item)")
-              v-icon delete
-            
+              v-icon send          
     .jc
       v-pagination.ma-3(v-model='pagination.page', :length='totalPages', :total-visible="7", :next="next")
 
@@ -148,6 +143,13 @@ export default {
       }
       return value
     },
+    fetchTotal () {
+      this.$http.get(`${this.resource}/count`).then(({ data }) => {
+        this.pagination.totalItems = data.data || 0;
+        this.pagination.totalPages = this.getTotalPages(data.data);
+        console.log(this.pagination.totalItems, this.pagination.totalPages);
+      })
+    },
     fetchGrid () {
       this.columns = [
         {text: '#', type: 'text', value: 'rank'},
@@ -181,6 +183,9 @@ export default {
     next () {
       // console.log('next')
       this.pagination.page++
+    },
+    getTotalPages (items) {
+      return Math.ceil(this.pagination.totalItems / this.pagination.rowsPerPage)
     }
   },
   computed: {
@@ -192,6 +197,7 @@ export default {
     }
   },
   mounted () {
+    this.fetchTotal();
     this.fetchData();
   },
   created () {

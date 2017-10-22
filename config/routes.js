@@ -35,5 +35,10 @@ module.exports.routes = {
   'POST /api/v1/upload': {
     controller: 'UploadController',
     action: 'upload'
+  },
+
+  'GET /api/v1/messages/count': {
+    controller: 'MessageController',
+    action: 'getCount'
   }
 };

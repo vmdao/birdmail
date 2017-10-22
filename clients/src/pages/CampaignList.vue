@@ -12,7 +12,7 @@ div()
       template(slot='items', scope='props')
         tr
           td(:class="column.left? '': 'text-xs-right'", v-for='column in columns', v-html="getColumnData(props.item, column)")
-          td(v-if='actions !== false', width='160')
+          td(v-if='actions !== false', width='180')
             template(v-for="(value, action) in actions")
               v-btn(v-if="['edit', 'delete'].indexOf(action) < 0", router,primary,fab,small,dark,:to="{name: action, params: {resource,id:props.item.id}}")
                 v-icon {{action.icon ? action.icon : action}}
@@ -149,7 +149,6 @@ export default {
         {text: 'Delivered', type: 'text', value: 'delivered_count', align: 'left'},
         {text: 'Bounced', type: 'text', value: 'bounced_count', align: 'left'},
         {text: 'Clicked', type: 'text', value: 'clicked_count', align: 'left'},
-        {text: 'Complained', type: 'text', value: 'complained_count', align: 'left'},
         {text: 'Dropped', type: 'text', value: 'dropped_count', align: 'left'}
       ];
       if (this.options && this.options.sort) {

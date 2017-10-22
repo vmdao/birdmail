@@ -138,7 +138,7 @@ export default {
         tag = 'img'
       }
       if (tag) {
-        const baseUrl = 'http://localhost:1337/';
+        const baseUrl = global.config.url;
         try {
           value = `<${tag} src="${baseUrl + value[0]}" class="crud-grid-thumb" controls />`
         } catch (error) {
@@ -178,8 +178,8 @@ export default {
       })
     },
     remove (item) {
-      this.$http.delete(`${this.resource}/${item.id}`).then(({data}) => {
-        const itemIndex = this.items.findIndex(i => i.id === item.id)
+      this.$http.delete(`${this.resource}/${item.address}`).then(({data}) => {
+        const itemIndex = this.items.findIndex(i => i.address === item.address)
         this.items.splice(itemIndex, 1);
         this.dialog = false;
       })

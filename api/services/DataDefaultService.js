@@ -8,6 +8,8 @@ module.exports = {
                     from: sails.config.mailgun.from,
                     html: sails.config.mailgun.html,
                     'o:tag': sails.config.mailgun['o:tag'],
+                    'o:campaign': null,
+                    'o:deliverytime': null,
                     'o:tracking': sails.config.mailgun['o:tracking'],
                     'o:tracking-clicks': sails.config.mailgun['o:tracking-clicks'],
                     'o:tracking-opens': sails.config.mailgun['o:tracking-opens'],
