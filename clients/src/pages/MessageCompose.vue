@@ -43,7 +43,7 @@ export default {
           label: 'Subject',
           required: true
         },
-        templates: {label: 'Templates', type: 'select', choices: [], options: {autocomplete: true, multiple: false, chips: false}},
+        templates: {label: 'Templates(Comming soon)', type: 'select', choices: [], options: {autocomplete: true, multiple: false, chips: false}},
         html: {
           label: 'Body',
           type: 'html'
